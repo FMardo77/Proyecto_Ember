@@ -1,0 +1,8 @@
+{{outlet}}
+
+hola!!!!!
+
+import DataAdapterMixin from 'ember-simple-auth/mixins/data-adapter-mixin'; // poner en cada adapter
+export default DS.RESTAdapter.extend(DataAdapterMixin, {
+  authorizer: 'authorizer:oauth2'
+});
