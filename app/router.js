@@ -2,14 +2,19 @@ import Ember from 'ember';
 import config from './config/environment';
 
 const Router = Ember.Router.extend({
-  location: config.locationType,
-  rootURL: config.rootURL
+  location: config.locationType
 });
 
 Router.map(function() {
   this.route('login', {path: '/login'});
-  this.route('register', {path: '/register'});
-  this.route('home');
+  this.route('home', {path: '/'});
+  this.route('register');//Este ya no lo vamos a usar -_-
+   this.route('profile');
+
+  this.route('profiles', function() {
+   this.route('new');
+  });
+
 });
 
 export default Router;

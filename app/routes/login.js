@@ -25,14 +25,14 @@ export default Ember.Route.extend({
 			// 	alert('Datos invalidos');
 			// }.bind(this));
 		this.get('session').authenticate('authenticator:oauth2', username, password).catch(()=>{
-			debugger
+			//debugger
 		}).then(()=>{
 			this.transitionTo('home');
 		})
 
 		},
 		doRedirectRegister: function(){
-			this.transitionTo('register'); // El boton de registro solo me redirige a una pantalla llamada 'register'
+			this.transitionTo('profiles.new'); // El boton de registro solo me redirige a una pantalla llamada 'register'
 
 		}
 	}
