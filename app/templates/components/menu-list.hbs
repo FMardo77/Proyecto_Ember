@@ -1,0 +1,14 @@
+<div class="list-group">
+
+	{{#each contentArray as |item|}}
+
+		{{!-- {{#link-to 'menu' item.id class="list-group-item"}} --}}
+		<div  class="list-group-item">
+ 			 <input {{action 'comprar' item on="change"}} type="checkbox" id="checkbox-toggle"  name="toggleCheckbox"  /> 
+			<h4>{{yield 'sectionTitle' item }}</h4>
+			<p>{{yield 'sectionBody' item}}</p>
+		</div>
+
+
+		{{/each}}
+</div>

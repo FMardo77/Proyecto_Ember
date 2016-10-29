@@ -32,7 +32,7 @@ export default Ember.Route.extend({
 
 		},
 		doRedirectRegister: function(){
-			this.transitionTo('profiles.new'); // El boton de registro solo me redirige a una pantalla llamada 'register'
+			this.transitionTo('users.new'); // El boton de registro solo me redirige a una pantalla llamada 'register'
 
 		}
 	}

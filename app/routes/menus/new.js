@@ -10,10 +10,10 @@ export default Ember.Route.extend({
     // }
 
    model(){
-	 	return this.store.createRecord('user', {});
+	 	return this.store.createRecord('menu', {});
 },
 	actions: {
-		crearPerfil(){
+		crearUsuario(){
 			let cuurentModel = this.get('currentModel');
 			if(cuurentModel.get('anyFieldEmpty')){
 				$('#validationModal').modal('show');

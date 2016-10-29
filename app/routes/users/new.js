@@ -13,7 +13,7 @@ export default Ember.Route.extend({
 	 	return this.store.createRecord('user', {});
 },
 	actions: {
-		crearPerfil(){
+		crearUsuario(){
 			let cuurentModel = this.get('currentModel');
 			if(cuurentModel.get('anyFieldEmpty')){
 				$('#validationModal').modal('show');

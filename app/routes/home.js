@@ -5,6 +5,45 @@ export default Ember.Route.extend(AuthenticatedRouteMixin, {
 	ajax: Ember.inject.service(),
 	session: Ember.inject.service('session'),
 
+
+queryParams: {
+		view: {
+			refreshModel: true
+		}
+	},
+
+	// beforeModel(){
+	// 	if(this.get('session.isAuthenticated')){
+	// 		console.log('isAuthenticated: true')
+	// 	}else{
+	// 		this.transitionTo('login');
+	// 		console.log('isAuthenticated: false')
+	// 	}
+	// },
+	// model
+	// Lo que esta funcion regrese, se va a pasar al template en forma de una
+	// variable llamada "model"
+	model: function(params){
+		// Opcion B)
+		// Model es una promesa
+		// return this.get('ajax').request('http://localhost:3000/tasks/list');
+		//
+		// Opcion C)
+		// Model es un arreglo de tipo DS.RecordArray (promise+arreglo)
+		let menusPromise = this.store.findAll('menu');
+		return menusPromise.then((arrayOfMenus)=>{ 			return arrayOfMenus});
+			// 	return arrayOfMenus.filter((t)=>{
+			// 	// 	if(params.view === 'past'){
+			// 	// 		return t.get('due_date') < new Date();
+			// 	// 	}
+			// 	// 	if(params.view === 'completed'){
+			// 	// 		return t.get('complete') == true;
+			// 	// 	}
+			// 	// 	return t.get('due_date') >= new Date();
+			// 	// });
+			// });
+	}
+
 	// beforeModel(){
 	// 	if(this.get('session.isAuthenticated')){
 	// 		console.log('isAuthenticated: true')
