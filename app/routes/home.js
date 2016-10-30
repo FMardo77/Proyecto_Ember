@@ -24,6 +24,7 @@ queryParams: {
 	// Lo que esta funcion regrese, se va a pasar al template en forma de una
 	// variable llamada "model"
 	model: function(params){
+
 		// Opcion B)
 		// Model es una promesa
 		// return this.get('ajax').request('http://localhost:3000/tasks/list');
@@ -31,7 +32,9 @@ queryParams: {
 		// Opcion C)
 		// Model es un arreglo de tipo DS.RecordArray (promise+arreglo)
 		let menusPromise = this.store.findAll('menu');
+
 		return menusPromise.then((arrayOfMenus)=>{ 			return arrayOfMenus});
+
 			// 	return arrayOfMenus.filter((t)=>{
 			// 	// 	if(params.view === 'past'){
 			// 	// 		return t.get('due_date') < new Date();
@@ -43,6 +46,13 @@ queryParams: {
 			// 	// });
 			// });
 	}
+	// model2: function(params){
+
+	// 	let productsPromise = this.store.findAll('product');
+
+	// 	return productsPromise.then((arrayOfProducts)=>{ 			return arrayOfProducts});
+
+	// }
 
 	// beforeModel(){
 	// 	if(this.get('session.isAuthenticated')){
