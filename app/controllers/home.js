@@ -12,8 +12,8 @@ export default Ember.Controller.extend({
 
 		if(!query){ return model; }
 
-		return model.filter(function(menu){
-			return task.get('name').indexOf(query) != -1;
+		return model.filter(function(params){
+			return params.get('name').indexOf(query) != -1;
 		});
 	}),
 	menusCountLabel: Ember.computed('query', 'filteredModel.[]', 'model.[]', function(){

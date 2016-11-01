@@ -1,4 +1,5 @@
 import Ember from 'ember';
+import RSVP from 'rsvp';
 import AuthenticatedRouteMixin from 'ember-simple-auth/mixins/authenticated-route-mixin'; //Esto va en todas las rutas a las que se quiera acceder unicamente si el usuario esta autenticado
 
 export default Ember.Route.extend(AuthenticatedRouteMixin, {
@@ -31,9 +32,24 @@ queryParams: {
 		//
 		// Opcion C)
 		// Model es un arreglo de tipo DS.RecordArray (promise+arreglo)
-		let menusPromise = this.store.findAll('menu');
 
-		return menusPromise.then((arrayOfMenus)=>{ 			return arrayOfMenus});
+		    return RSVP.hash({
+      menu_promise: this.get('store').findAll('menu').then((arrayOfMenus)=>{return arrayOfMenus}),
+      product_promise: this.get('store').findAll('product').then((arrayOfProducts)=>{return arrayOfProducts})
+    });
+
+		//let menu_promise = this.store.findAll('menu');
+	// 	let product_promise=this.store.findAll('product');
+
+	// 	//let menusPromise = this.store.findAll('menu');
+
+	// if (menu_promise) {
+ //      return menu_promise.then((arrayOfMenus)=>{ 			return arrayOfMenus});
+ //    } else {
+ //      return product_promise.then((arrayOfProducts)=>{ 			return arrayOfProducts});
+ //    }
+
+	//	return menusPromise.then((arrayOfMenus)=>{ 			return arrayOfMenus});
 
 			// 	return arrayOfMenus.filter((t)=>{
 			// 	// 	if(params.view === 'past'){

@@ -1,12 +1,12 @@
 <div class="list-group">
 
-	{{#each contentArray as |item|}}
+	{{#each contentArray as |menu|}}
 
 		{{!-- {{#link-to 'menu' item.id class="list-group-item"}} --}}
 		<div  class="list-group-item">
- 			<p> <input {{action 'comprar' item on="change"}} type="checkbox" id="checkbox-toggle"  name="toggleCheckbox"  /> Agregar a la orden</p>
-			<h4>{{yield 'sectionTitle' item }}</h4>
-			<p>{{yield 'sectionBody' item}}</p>
+ 			<p> <input {{action 'comprar' menu on="change"}} type="checkbox" id="checkbox-toggle"  name="toggleCheckbox"  /> Agregar a la orden</p>
+			<h4>{{yield 'sectionTitle' menu }}</h4>
+			<p>{{yield 'sectionBody' menu}}</p>
 		</div>
 
 
