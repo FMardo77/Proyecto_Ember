@@ -18,7 +18,6 @@ export default Ember.Route.extend({
 			if(cuurentModel.get('anyFieldEmpty')){
 				$('#validationModal').modal('show');
 			} else {
-				debugger
 				let promise = cuurentModel.save();
 
 				promise.then((response)=>{

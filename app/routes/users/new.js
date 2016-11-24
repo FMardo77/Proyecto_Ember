@@ -3,30 +3,43 @@ import Ember from 'ember';
 export default Ember.Route.extend({
 	ajax: Ember.inject.service(),
 
+ setupController: function(controller, model) {
+  controller.set('user', model.user);
+  controller.set('profile', model.profile);
+},
 
-    // var profile = this.profile;
-    // return profile.find('id').then(function() {  // success function, we got the entries so now we request definitions
-    //     store.find('id');
-    // }
+   model: function(){
+  return Ember.RSVP.hash({
+    user: this.store.createRecord('user'),
+    profile: this.store.createRecord('profile')
+  });
 
-   model(){
-	 	return this.store.createRecord('user', {});
+
+
 },
 	actions: {
 		crearUsuario(){
-			let cuurentModel = this.get('currentModel');
-			if(cuurentModel.get('anyFieldEmpty')){
-				$('#validationModal').modal('show');
-			} else {
-				debugger
-				let promise = cuurentModel.save();
+			// let currentModel = this.get('currentModel');
+			// if(currentModel.get('anyFieldEmpty')){
+			// 	$('#validationModal').modal('show');
+			// } else {			
+			// 	let promise = currentModel.save();
 
-				promise.then((response)=>{
-					this.transitionTo('home');
-				}).catch(()=>{
-					debugger
-				});
-			}
+			// 	promise.then((response)=>{
+			// 		this.transitionTo('home');
+			// 	}).catch(()=>{
+			// 		debugger
+			// 	});
+			// }
+			//  var user = this.controller.get('user');
+ 		// 	 var profile = this.controller.get('profile');
+
+ 		// 	 user.get('profile').pushObject(profile);
+ 		// 	 profile.set('user', user);
+
+ 		// 	user.save().then(function() {
+   // 			this.transitionTo('home');
+		 // });
 		}
 	}
 

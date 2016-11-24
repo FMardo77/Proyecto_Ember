@@ -34,8 +34,8 @@ queryParams: {
 		// Model es un arreglo de tipo DS.RecordArray (promise+arreglo)
 
 		    return RSVP.hash({
-      menu_promise: this.get('store').findAll('menu').then((arrayOfMenus)=>{return arrayOfMenus}),
-      product_promise: this.get('store').findAll('product').then((arrayOfProducts)=>{return arrayOfProducts})
+      menu_promise: this.get('store').findAll('menu').then((arrayOfMenus)=>{return arrayOfMenus})
+      // product_promise: this.get('store').findAll('product').then((arrayOfProducts)=>{return arrayOfProducts})
     });
 
 		//let menu_promise = this.store.findAll('menu');

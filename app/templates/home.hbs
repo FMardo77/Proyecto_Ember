@@ -93,15 +93,11 @@
 #izquierda { 
 float: left; 
 width: 33%; 
-
 } 
-
 #derecha { 
 float: right; 
 width: 33%; 
-
 } 
-
 #central { 
 width: 33%; 
 margin: 0 auto; 
@@ -115,7 +111,7 @@ margin: 0 auto;
     <div id="izquierda">  
         <div class="well">
             <h2>Nuestros productos:</h2>
-                            {{#prduct-list contentArray=filteredModel.product_promise as |sectionName currentItem|}}
+<!--                             {{#prduct-list contentArray=filteredModel.product_promise as |sectionName currentItem|}}
                                 {{#if (eq sectionName 'sectionTitle') }}
 {{!--                                   <input type="checkbox" checked={{currentItem.complete}} {{action 'toggleCompleteTask' currentItem on='change'}}/> --}}
                                  {{/if}}
@@ -124,9 +120,9 @@ margin: 0 auto;
                                 <p> {{currentItem.description}}</p>
                                  <p>$ {{currentItem.tipo}}</p>
                                 {{/if}}
-                            {{/prduct-list}}
-					<img class="img-responsive" src="lacarta.jpg" alt="">
-	   </div>
+                            {{/prduct-list}} -->
+                    <img class="img-responsive" src="lacarta.jpg" alt="">
+       </div>
     </div> 
 
 
@@ -135,13 +131,13 @@ margin: 0 auto;
                     <h2>Las ofertas del día son en:</h2>
                 
                 <ul>
-					<li type="circle">Bebidas</li>
-					<li type="circle">Bebidas</li>
-					<li type="circle">Bebidas</li>
-					<li type="circle">Bebidas</li>
-					</ul>
-					<img class="img-responsive" src="cafe.jpg" alt="">
-	
+                    <li type="circle">Bebidas</li>
+                    <li type="circle">Bebidas</li>
+                    <li type="circle">Bebidas</li>
+                    <li type="circle">Bebidas</li>
+                    </ul>
+                    <img class="img-responsive" src="cafe.jpg" alt="">
+    
         </div> 
 
     </div> 
@@ -152,7 +148,7 @@ margin: 0 auto;
               <div class="row">
                  <div class="col-lg-12">
 
-                            {{#menu-list contentArray=filteredModel.menu_promise as |sectionName currentItem|}}
+                    {{#menu-list contentArray=filteredModel.menu_promise as |sectionName currentItem|}}
                                 {{#if (eq sectionName 'sectionTitle') }}
                                 {{/if}}
                                 {{#if (eq sectionName 'sectionBody')}}

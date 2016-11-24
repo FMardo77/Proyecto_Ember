@@ -1,4 +1,4 @@
-<div class="row">
+<!-- <div class="row">
 	<div class="col-sm-4 col-sm-offset-4">
 
 
@@ -27,4 +27,38 @@
 		</form>
 
 	</div>
-</div>
+</div> -->
+
+
+<div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="text-center">Cafetería</h1>
+        </div>
+         <div class="modal-body">
+         <form {{action 'doLogin'  username password action  on='submit'}}>
+
+             <div class="form-group">
+             {{input value=username id="username" class="form-control input-lg" placeholder="Username"}}
+<!--                  <input type="text" class="form-control input-lg" placeholder="Username"/> -->
+             </div>
+
+             <div class="form-group">
+            	 {{input value=password id="password" type="password" class="form-control input-lg" placeholder="Password"}}
+<!--                  <input type="password" class="form-control input-lg" placeholder="Password"/> -->
+             </div>
+
+             <div class="form-group">
+                <!--  <input type="submit" class="btn btn-block btn-lg btn-primary" value="Login"/> -->
+			<p class="text-center">
+				<button type="submit" class="btn btn-block btn-lg btn-primary">Login</button>
+			</p>
+			<p class="text-center">
+				<button {{action 'doRedirectRegister'}} type="button" class="btn btn-block btn-lg btn-primary">Register</button>
+			</p>
+                
+             </div>
+            </form>
+         </div>
+    </div>
+ </div>
