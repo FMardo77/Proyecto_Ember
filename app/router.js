@@ -22,6 +22,10 @@ Router.map(function() {
   this.route('menus', function() {
     this.route('new');
   });
+
+  this.route('types', function() {
+    this.route('new');
+  });
 });
 
 export default Router;

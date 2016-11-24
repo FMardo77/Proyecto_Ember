@@ -7,7 +7,6 @@ export default Ember.Route.extend({
 
 		actions:{
 		doLogin: function(username, password){
-this.sendAction('submitClicked', password)
 
 			 // const flashMessages = Ember.get(this, 'flashMessages');
 			// console.log('Llegué a doLogin');
