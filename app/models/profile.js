@@ -1,7 +1,7 @@
 import DS from 'ember-data';
 
 export default DS.Model.extend({
-	profile: DS.belongsTo('profile', { async: true }),
+	user: DS.belongsTo('user', { async: true }),
 
 	name: DS.attr('string'),
 	lastn: DS.attr('string'),

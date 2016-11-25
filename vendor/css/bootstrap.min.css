@@ -6503,7 +6503,7 @@ button.close {
   content: " ";
 }
 body{
-	background: url("http://imgview.info/download/20150504/lovely-coffee-shop-wallpaper-1920x1200.jpg")no-repeat center center fixed;
+	/*background: url("http://imgview.info/download/20150504/lovely-coffee-shop-wallpaper-1920x1200.jpg")no-repeat center center fixed;/*
     /* background: url("http://p1.pichost.me/i/11/1344899.jpg") no-repeat center center fixed;*/
     -webkit-background-size: cover;
     -moz-background-size: cover;
