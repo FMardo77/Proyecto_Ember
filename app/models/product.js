@@ -1,9 +1,10 @@
 import DS from 'ember-data';
 
 export default DS.Model.extend({
-	product: DS.belongsTo('product'),
+	type: DS.belongsTo('type'),
 	name: DS.attr('string'),
 	description: DS.attr('string'),
-	tipo: DS.attr(),
+	price: DS.attr('float'),
+	//tipo: DS.attr(),
 
 });

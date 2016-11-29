@@ -26,6 +26,10 @@ Router.map(function() {
   this.route('types', function() {
     this.route('new');
   });
+
+  this.route('products', function() {
+    this.route('new');
+  });
 });
 
 export default Router;

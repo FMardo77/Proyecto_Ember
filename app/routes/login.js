@@ -8,43 +8,25 @@ export default Ember.Route.extend({
 		actions:{
 		doLogin: function(username, password){
 
-			 // const flashMessages = Ember.get(this, 'flashMessages');
-			// console.log('Llegué a doLogin');
-			// console.log(username);
-			// console.log(password);
-			//
-
-			// let loginPromise = this.get('ajax').post('http://localhost:3000/login.json', {
-			// 	data:{
-			// 		username: username,
-			// 		password: password,
-			// 		grant_type: 'password'
-			// 	}
-			// });
-
-			// loginPromise.then(function(){
-			// 	this.transitionTo('home');
-			// }.bind(this)).catch(function(){
-			// 	alert('Datos invalidos');
-			// }.bind(this));
 			var usernameInput = document.getElementById('username');
 			var passwordInput = document.getElementById('password');
 
 			if(usernameInput.value == ''){
-				//alert('El username no puede estar vacio')
+				alert('El username no puede estar vacio');
 				// flashMessages.danger('Something went wrong!');
-        		handleError(err);
+        		//handleError(err);
 			}else{
 				this.set('username', usernameInput.value );
 			}
 
 			if(passwordInput.value == ''){
-				//alert('El password no puede estar vacio')
+				alert('El password no puede estar vacio');
 			}else{
-				this.set('password', passwordInput.value );
+					//alert('Datos Incorrectos');
 			}
 		this.get('session').authenticate('authenticator:oauth2', username, password).catch(()=>{
-			//debugger
+			//this.set('errorMessage', result.error || result);
+			alert('Datos Incorrectos');
 		}).then(()=>{
 			this.transitionTo('home');
 		})
