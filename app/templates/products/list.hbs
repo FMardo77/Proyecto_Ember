@@ -1,0 +1,37 @@
+{{admin-nav}}
+<br>
+<br>
+<div class="container">
+	<div class="row">
+		<div class="col-sm-6 col-sm-offset-3">
+{{!-- 
+		<p>
+			{{input value=query class="form-control"}}
+		</p>
+
+		<p>
+			{{tasksCountLabel}}
+		</p>
+
+		<p>
+
+		</p> --}}
+
+			{{#prduct-list contentArray=model.productPromise completadaOut=(action 'completarencontroller')
+										destroyTaskOutOfComponent=(action 'destroyTaskInController') 
+										as |sectionName currentItem| 
+			}}
+
+				{{#if (eq sectionName 'sectionTitle') }}
+				<h3>{{currentItem.name}}</h3>
+{{!-- 					{{inline-editing value=currentItem.title cancel=(action "nohagasnada" task) doSave=(action "guardaTask" currentItem)}} --}}
+				{{/if}}
+				{{#if (eq sectionName 'sectionBody')}}
+					{{currentItem.description}}
+					${{currentItem.price}}
+				{{/if}} 
+			{{/prduct-list}}
+		</div>
+	</div>
+</div>
+

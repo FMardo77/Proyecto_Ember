@@ -1,12 +1,17 @@
+
 <div class="list-group">
 
 	{{#each contentArray as |item|}}
 
-		{{!-- {{#link-to 'menu' item.id class="list-group-item"}} --}}
+		{{!-- {{#link-to 'task' item.id class="list-group-item"}} --}}
 		<div  class="list-group-item">
- 			<p> <input {{action 'comprar' item on="change"}} type="checkbox" id="checkbox-toggle"  name="toggleCheckbox"  /> Agregar a la orden</p>
+			<button {{action 'destroyTaskInComponent' item on='click' bubbles=false}} class="badge btn">X</button>
+			 
+
 			<h4>{{yield 'sectionTitle' item }}</h4>
 			<p>{{yield 'sectionBody' item}}</p>
+
+			<input {{action 'completar' item on="change"}} type="checkbox" id="checkbox-toggle"  name="toggleCheckbox"  checked /> Disponible
 		</div>
 
 

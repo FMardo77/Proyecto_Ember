@@ -29,7 +29,9 @@ Router.map(function() {
 
   this.route('products', function() {
     this.route('new');
+    this.route('list');
   });
+  this.route('homeadmin');
 });
 
 export default Router;
