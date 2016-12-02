@@ -6,6 +6,7 @@ export default Ember.Controller.extend({
   actions: {
     selectTipo(eltipo) {
       this.set('eltipo', eltipo);
+       this.sendAction('action', eltipo, this.get('product_promise'));
     },
     		createProuduct(){//recibir id de tipo como producto y ponerselo sl producto
 			let type = this.get('currentModel.type_promise');

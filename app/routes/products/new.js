@@ -8,7 +8,7 @@ export default Ember.Route.extend({
     		product: this.store.createRecord('product'),
     		//type: this.store.createRecord('type')
     		type_promise: this.get('store').findAll('type').then((arrayOfTypes)=>{return arrayOfTypes}),
-    		//product_promise: this.get('store').findAll('type').then((arrayOfProducts)=>{return arrayOfProducts})
+    		product_promise: this.get('store').findAll('type').then((arrayOfProducts)=>{return arrayOfProducts})
   		});
 	},	
 

@@ -1,0 +1,5 @@
+{{#each tipos as |tipo|}}
+  <option value={{tipo.id}} selected={{is-equal tipo.id default.id}}>
+    {{tipo.name}}
+  </option>
+{{/each}}

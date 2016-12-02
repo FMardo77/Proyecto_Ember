@@ -6,8 +6,8 @@
 		<div class="col-sm-6 col-sm-offset-3">
 
 		<p>
-			{{#link-to 'tasks.new' class="btn btn-info btn-block"}}
-				Nueva tarea
+			{{#link-to 'products.new' class="btn btn-info btn-block"}}
+				Crear un nuevo producto
 			{{/link-to}}
 		</p>
 {{!-- 
@@ -33,8 +33,10 @@
 {{!-- 					{{inline-editing value=currentItem.title cancel=(action "nohagasnada" task) doSave=(action "guardaTask" currentItem)}} --}}
 				{{/if}}
 				{{#if (eq sectionName 'sectionBody')}}
-					{{currentItem.description}}
-					${{currentItem.price}}
+					<p>{{currentItem.description}}</p>
+					<p> ${{currentItem.price}}</p>
+					<p>Tipo {{currentItem.type_id}}</p>
+
 				{{/if}} 
 			{{/prduct-list}}
 		</div>

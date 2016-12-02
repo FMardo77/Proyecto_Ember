@@ -13,10 +13,11 @@ export default Ember.Route.extend(AuthenticatedRouteMixin, {
 	},
 	model: function(params){
 		  		return Ember.RSVP.hash({
-    		product: this.store.createRecord('product'),
+    		//product: this.store.createRecord('product'),
     		//type: this.store.createRecord('type')
-    		productPromise: this.get('store').findAll('product').then((arrayOfTypes)=>{return arrayOfTypes}),
-    		//product_promise: this.get('store').findAll('type').then((arrayOfProducts)=>{return arrayOfProducts})
+    		productPromise: this.store.findAll('product').get('types');
+    		//productPromise: this.get('store').findAll('product').then((arrayOfTypes)=>{return arrayOfTypes}),
+    		type_promise: this.get('store').findAll('type').then((arrayOfTypes)=>{return arrayOfTypes}),
   		});
 
 		//return this.store.createRecord('product', {});
