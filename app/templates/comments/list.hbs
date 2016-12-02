@@ -1,0 +1,29 @@
+{{admin-nav}}
+<br>
+<br>
+<div class="container">
+	<div class="row">
+		<div class="col-sm-6 col-sm-offset-3">
+
+			{{#comment-list contentArray=model.comment_promise             destroyTaskOutOfComponent=(action 'destroyTaskInController') as |sectionName currentItem| 
+			}}
+
+				{{#if (eq sectionName 'sectionTitle') }}
+				<h5>{{currentItem.mail}}</h5>
+				{{/if}}
+				{{#if (eq sectionName 'sectionBody')}}
+					<p>{{currentItem.text}}</p>
+
+
+				{{/if}} 
+			{{/comment-list}}
+		</div>
+	</div>
+</div>
+
+
+{{!-- 
+			{{#comment-list contentArray=model.comment_promise 
+										destroyTaskOutOfComponent=(action 'destroyTaskInController') 
+										as |sectionName currentItem| 
+			}} --}}

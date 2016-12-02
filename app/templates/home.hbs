@@ -1,92 +1,30 @@
-
+{{client-nav}}
 <body>
-
-    <!-- Navigation -->
-    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-        <div class="container">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="#">Cafetería Car-Fel</a>
-            </div>
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav">
-                    <li>
-                        <a href="#">Acerca de </a>
-                    </li>
-                    <li>
-                        <a href="#">Compras</a>
-                    </li>
-                    <li>
-                        <a href="#">Contacto</a>
-                    </li>
-                    <li>
-                        <button {{action 'invalidateSession'}} type="button" class="btn btn-block btn-lg btn-primary">Logout</button> 
-                    </li>
-                </ul>
-            </div>
-            <!-- /.navbar-collapse -->
-        </div>
-        <!-- /.container -->
-    </nav>
-
     <!-- Page Content -->
     <div class="container">
-
         <div class="row">
-
             <!-- Blog Post Content Column -->
             <div class="col-lg-8">
-
                 <!-- Blog Post -->
 
                 <!-- Title -->
                 <br>
-                ....
-         
-                <h1>Nuestros servicios</h1>
+                ....  
+                <font color="orange">    
+                <h1>Nuestros productos</h1>
+                </font>
                       <div>
-                     <div class="col-xs-3">
-                
-                    
-                    
-                    <div class="input-group">
-                        <input type="text" class="form-control">
-                        <span class="input-group-btn">
-                            <button class="btn btn-default" type="button">
-                                <span class="glyphicon glyphicon-search"></span>
-                        </button>
-                        </span>
-                    </div>
-                  
-           
-                </div>
-          
-                </div>
-                
+                     <div class="col-xs-3">                    
+                </div>        
+                </div>                
                 <hr>
                  <hr>
-
-                <img class="img-responsive" src="cafe.jpg" alt="" align="center">
-
-
-              </div>
-
-                
-
-            </div>
-
+                <img class="img-responsive" src="slide_02.jpg" alt="" align="center">
+              </div>              
+           </div>
         </div>
 <br>
-<br>
-   
+<br> 
 
 </body>
 
@@ -114,27 +52,21 @@ margin: 0 auto;
 
     <div id="izquierda">  
         <div class="well">
-            <h2>Nuestros productos:</h2>
+            <h2>Entradas  y mas...</h2>
+                            <img class="img-responsive" src="lacarta.jpg" alt="">
                             {{#prduct-list contentArray=model.product_promise as |sectionName currentItem|}}
                                 {{#if (eq sectionName 'sectionTitle') }}{{/if}}
                                 <p>{{currentItem.name}}</p>
                             {{/prduct-list}} 
-                    <img class="img-responsive" src="lacarta.jpg" alt="">
+
        </div>
     </div> 
 
 
     <div id="derecha">  
         <div class="well">
-                    <h2>Las ofertas del día son en:</h2>
-                
-                <ul>
-                    <li type="circle">Bebidas</li>
-                    <li type="circle">Bebidas</li>
-                    <li type="circle">Bebidas</li>
-                    <li type="circle">Bebidas</li>
-                    </ul>
-                    <img class="img-responsive" src="cafe.jpg" alt="">
+                    <h2>Postres y bebidas:</h2>
+                     <img class="img-responsive" src="cafe.jpg" alt="">
     
         </div> 
 
@@ -145,16 +77,12 @@ margin: 0 auto;
             <h2>Menú del día</h2>
               <div class="row">
                  <div class="col-lg-12">
-{{!--                      {{#menu-list contentArray=filteredModel.menu_promise as |sectionName currentItem|}}
-                                {{#if (eq sectionName 'sectionTitle') }}
-                                {{/if}}
-                                {{#if (eq sectionName 'sectionBody')}}
-                                 <p><h1>{{currentItem.name}}</h1></p>
-                                <p> {{currentItem.description}}</p>
-                                 <p>$ {{currentItem.price}}</p>
-                                {{/if}}
-                            {{/menu-list}} --}}
-                            <img class="img-responsive" src="menudia.jpg" alt="">
+                     <img class="img-responsive" src="menudia.jpg" alt="">
+                {{#product-dos contentArray=model.des_promise as |sectionName currentItem|}}
+                                {{#if (eq sectionName 'sectionTitle') }}{{/if}}
+                                <p>{{currentItem.name}}</p>
+                            {{/product-dos}} 
+
                 </div>
                       
              </div>

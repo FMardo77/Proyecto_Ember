@@ -1,0 +1,29 @@
+
+<br>
+<br>
+
+<div class="container">
+<font color="orange">
+	<h1>Déjanos tu comentario</h1>
+	</font>
+<font color="white">
+	<div class="row">
+		<div class="col-md-12">
+			<form {{action 'createComment' on="submit" }}>
+
+				<div class="form-group">
+					<label>Correo electrónico</label>
+					{{input value=model.mail class="form-control"}}
+				</div>
+				<div class="form-group">
+					<label>Description</label>
+					{{textarea value=model.text class="form-control"}}
+				</div>
+
+				<button type="submit" class="btn btn-default">Crear</button>
+			</form>
+		</div>
+	</div>
+	</font>
+</div>
+

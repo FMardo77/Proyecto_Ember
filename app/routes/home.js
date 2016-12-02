@@ -26,22 +26,13 @@ queryParams: {
 	// variable llamada "model"
 	model: function(params){
 		    return RSVP.hash({
-      //menu_promise: this.get('store').findAll('menu').then((arrayOfMenus)=>{return arrayOfMenus})
-       product_promise: this.get('store').findAll('type').then((arrayOfProducts)=>{return arrayOfProducts})
-    });
+      		 	product_promise: this.get('store').findAll('product').then((arrayOfProducts)=>{return arrayOfProducts}),
 
-	//	return menusPromise.then((arrayOfMenus)=>{ 			return arrayOfMenus});
-
-			// 	return arrayOfMenus.filter((t)=>{
-			// 	// 	if(params.view === 'past'){
-			// 	// 		return t.get('due_date') < new Date();
-			// 	// 	}
-			// 	// 	if(params.view === 'completed'){
-			// 	// 		return t.get('complete') == true;
-			// 	// 	}
-			// 	// 	return t.get('due_date') >= new Date();
-			// 	// });
-			// });
+		des_promise: this.get('store').findAll('product')
+		.then(arrayOfTasks=>{arrayOfTasks.filter((t)=>{
+			return t.get('type_id') === '1';
+				}),
+			});
 	},
 	  actions: {
     invalidateSession() {

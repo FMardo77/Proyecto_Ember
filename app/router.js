@@ -8,6 +8,7 @@ const Router = Ember.Router.extend({
 Router.map(function() {
   this.route('login', {path: '/login'});
   this.route('home', {path: '/'});
+  this.route('product', {path: '/:product_id'});
   this.route('register');//Este ya no lo vamos a usar -_-
   this.route('profile');
 
@@ -26,12 +27,17 @@ Router.map(function() {
   this.route('types', function() {
     this.route('new');
   });
-
+  // this.route('product', {path: '/:product_id'});
   this.route('products', function() {
     this.route('new');
     this.route('list');
   });
   this.route('homeadmin');
+
+  this.route('comments', function() {
+    this.route('new');
+    this.route('list');
+  });
 });
 
 export default Router;

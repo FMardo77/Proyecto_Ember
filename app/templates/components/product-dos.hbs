@@ -1,0 +1,16 @@
+
+<div class="list-group">
+
+	{{#each contentArray as |item|}}
+
+		{{!-- {{#link-to 'task' item.id class="list-group-item"}} --}}
+		<div  class="list-group-item"> 
+
+			<h4>{{yield 'sectionTitle' item }}</h4>
+			<p>{{yield 'sectionBody' item}}</p>
+
+			<input {{action 'agregar' item on="change"}} type="checkbox" id="checkbox-toggle"  name="toggleCheckbox" /> Agregar a la Orden
+		</div>
+		{{/each}}
+</div>
+
