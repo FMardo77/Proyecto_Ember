@@ -38,6 +38,8 @@ Router.map(function() {
     this.route('new');
     this.route('list');
   });
+  this.route('about');
+  this.route('cartshopp');
 });
 
 export default Router;

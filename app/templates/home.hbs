@@ -4,7 +4,7 @@
     <div class="container">
         <div class="row">
             <!-- Blog Post Content Column -->
-            <div class="col-lg-8">
+           
                 <!-- Blog Post -->
 
                 <!-- Title -->
@@ -18,10 +18,9 @@
                 </div>        
                 </div>                
                 <hr>
-                 <hr>
-                <img class="img-responsive" src="slide_02.jpg" alt="" align="center">
+                <img class="img-responsive" src="slide_02.jpg" alt="" align="center" width="1200" height="250">
               </div>              
-           </div>
+           
         </div>
 <br>
 <br> 
@@ -52,12 +51,12 @@ margin: 0 auto;
 
     <div id="izquierda">  
         <div class="well">
-            <h2>Entradas  y mas...</h2>
+{{!--             <h2>Entradas  y mas...</h2>
                             <img class="img-responsive" src="lacarta.jpg" alt="">
                             {{#prduct-list contentArray=model.product_promise as |sectionName currentItem|}}
                                 {{#if (eq sectionName 'sectionTitle') }}{{/if}}
                                 <p>{{currentItem.name}}</p>
-                            {{/prduct-list}} 
+                            {{/prduct-list}}  --}}
 
        </div>
     </div> 
@@ -65,8 +64,8 @@ margin: 0 auto;
 
     <div id="derecha">  
         <div class="well">
-                    <h2>Postres y bebidas:</h2>
-                     <img class="img-responsive" src="cafe.jpg" alt="">
+{{!--                     <h2>Postres y bebidas:</h2>
+                     <img class="img-responsive" src="cafe.jpg" alt=""> --}}
     
         </div> 
 
@@ -78,10 +77,21 @@ margin: 0 auto;
               <div class="row">
                  <div class="col-lg-12">
                      <img class="img-responsive" src="menudia.jpg" alt="">
-                {{#product-dos contentArray=model.des_promise as |sectionName currentItem|}}
+{{!--                 {{#product-dos contentArray=model.product_promise as |sectionName currentItem|}}
                                 {{#if (eq sectionName 'sectionTitle') }}{{/if}}
                                 <p>{{currentItem.name}}</p>
-                            {{/product-dos}} 
+                            {{/product-dos}}  --}}
+                      {{#product-detail contentArray=model.product_promise as |sectionName currentItem|}}
+                                {{#if (eq sectionName 'sectionTitle') }}
+                                     <p>{{currentItem.name}}</p>
+                                {{/if}}
+
+                                {{#if (eq sectionName 'sectionBody')}}
+                                    <p>{{currentItem.description}}</p>
+                                    <p>Precio  ${{currentItem.price}}</p>
+                                    <p>Tipo {{currentItem.products.type_id}}</p>
+                                {{/if}} 
+                    {{/product-detail}} 
 
                 </div>
                       

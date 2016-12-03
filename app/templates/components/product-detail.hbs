@@ -1,0 +1,25 @@
+{{!-- {{product.name}}
+{{product.description}}
+{{product.price}}
+
+<button {{action 'addToCart' product}}>Agregar a la orden</button> --}}
+
+
+
+<div class="list-group">
+
+	{{#each contentArray as |item|}}
+
+		{{!-- {{#link-to 'task' item.id class="list-group-item"}} --}}
+		<div  class="list-group-item"> 
+
+			<h4>{{yield 'sectionTitle' item }}</h4>
+			<p>{{yield 'sectionBody' item}}
+			<button {{action 'addToCart' item}} class="btn btn-success btn-sm">Agregar a la orden</button>
+			</p>
+
+		
+		</div>
+		{{/each}}
+</div>
+

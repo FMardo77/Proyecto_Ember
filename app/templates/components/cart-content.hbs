@@ -1,0 +1,32 @@
+<ul>
+ {{#each shoppingCart.items as |item|}}
+    <li>
+      {{item.name}} {{item.price}}
+      <button {{action "remove" item}} class="btn btn-warning btn-sm">Quitar</button>
+    </li>
+  {{/each}}
+</ul>
+
+{{!-- <ul>
+{{#each shoppingCart.items as |item|}}
+<td class="col-sm-8 col-md-6">
+    <div class="media">
+        <a class="thumbnail pull-left" href="#"> <img class="media-object" src="http://icons.iconarchive.com/icons/aha-soft/desktop-buffet/256/Steak-icon.png" style="width: 72px; height: 72px;"> 
+        </a>
+            <div class="media-body">
+                <h4> <p>{{item.name}}</p></h4>
+            </div>
+    </div>
+</td>
+<td class="col-sm-1 col-md-1" style="text-align: center">
+    <input type="email" class="form-control" id="exampleInputEmail1" value="3">
+ </td>
+ <td class="col-sm-1 col-md-1 text-center"><strong>{{item.price}}</strong></td>
+ <td class="col-sm-1 col-md-1 text-center"><strong>$14.61</strong></td>
+ <td class="col-sm-1 col-md-1">
+ 	<button {{action "remove" item}} type="button" class="btn btn-danger">
+    	 <span class="glyphicon glyphicon-remove"></span> Quitar
+  	</button>
+</td>
+{{/each}}
+</ul> --}}

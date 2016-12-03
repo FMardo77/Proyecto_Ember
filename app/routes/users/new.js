@@ -1,7 +1,7 @@
 import Ember from 'ember';
-import AuthenticatedRouteMixin from 'ember-simple-auth/mixins/authenticated-route-mixin';
 
-export default Ember.Route.extend(AuthenticatedRouteMixin, {
+
+export default Ember.Route.extend({
 	ajax: Ember.inject.service(),
 
  setupController: function(controller, model) {
@@ -25,6 +25,7 @@ export default Ember.Route.extend(AuthenticatedRouteMixin, {
 			user.save().then((u)=>{
 				profile.set('user', u);
 				profile.save();
+				this.transitionTo('login');
 			})
 			// let currentModel = this.get('currentModel');
 			// if(currentModel.get('anyFieldEmpty')){

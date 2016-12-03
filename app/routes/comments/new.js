@@ -14,6 +14,7 @@ export default Ember.Route.extend(AuthenticatedRouteMixin, {
 				let promise = cuurentModel.save();
 
 				promise.then((response)=>{
+					alert('Gracias');
 					this.transitionTo('home');
 				}).catch(()=>{
 					debugger

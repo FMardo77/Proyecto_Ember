@@ -6,17 +6,18 @@ export default Ember.Controller.extend({
   actions: {
     selectTipo(eltipo) {
       this.set('eltipo', eltipo);
-       this.sendAction('action', eltipo, this.get('product_promise'));
+       //this.sendAction('action', eltipo, this.get('product_promise'));
     },
-    		createProuduct(){//recibir id de tipo como producto y ponerselo sl producto
-			let type = this.get('currentModel.type_promise');
-			let product = this.get('currentModel.product');
+    		createProduct(){//recibir id de tipo como producto y ponerselo sl producto
+			let type = this.get('model.type_promise');
+			let product = this.get('model.product');
 
-				type.save().then((t)=>{
-					product.set('type', t);
+			product.set('type', this.get('eltipo'));
+				//type.save().then((t)=>{
+					//product.set('type', t);
 				product.save();
-				this.transitionToRoute('products/new', currentModel.type_promise);
-			})
+				//this.transitionToRoute('products/new', currentModel.type_promise);
+		//	})
 		}
   }
 });
